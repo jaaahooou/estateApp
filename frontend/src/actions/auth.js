@@ -19,7 +19,7 @@ export const login = (email, password) => async (dispatch) => {
 
   try {
     const res = await axios.post(
-      "http://localhost:8000/api/token",
+      "http://localhost:8000/api/token/",
       body,
       config
     );
@@ -67,6 +67,6 @@ export const signup =
   };
 
 export const logout = () => (dispatch) => {
-  dispatch(setAlert("logout successfull", "success"));
+  dispatch(setAlert("logout successful.", "success"));
   dispatch({ type: LOGOUT });
 };
