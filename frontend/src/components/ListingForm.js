@@ -36,11 +36,12 @@ const ListingForm = (props) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = (e) => {
-    e.preventDfault();
+    e.preventDefault();
 
     axios.defaults.headers = {
       "Content-Type": "application/json",
     };
+    console.log("działam");
 
     setLoading(true);
     axios
@@ -95,10 +96,17 @@ const ListingForm = (props) => {
               onChange={(e) => onChange(e)}
               value={sqmeters}
             >
-              <option>1000+</option>
-              <option>1200+</option>
-              <option>1500+</option>
-              <option>2000+</option>
+              <option>25+</option>
+              <option>35+</option>
+              <option>45+</option>
+              <option>55+</option>
+              <option>65+</option>
+              <option>85+</option>
+              <option>100+</option>
+              <option>120+</option>
+              <option>150+</option>
+              <option>200+</option>
+              <option>400+</option>
               <option>Any</option>
             </select>
           </div>
@@ -249,7 +257,7 @@ const ListingForm = (props) => {
         <div className="col-1-of-6">
           {loading ? (
             <div className="listingform__loader">
-              <Loader type="Oval" color="#424242" height={50} width={50} />
+              {/* <Loader type="Oval" color="#424242" height={50} width={50} /> */}
             </div>
           ) : (
             <button className="listingform__button listingform__button--primary">

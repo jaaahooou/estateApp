@@ -9,6 +9,7 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState([1]);
   const [listingsPerPage, setListingsPerPage] = useState([3]);
   const [active, setActive] = useState([1]);
+  const itemsInPage = 1;
 
   const indexOfLastListing = currentPage * listingsPerPage;
   const indexOfFirstListing = indexOfLastListing - listingsPerPage;
@@ -52,12 +53,12 @@ const Home = () => {
         <div className="row">
           {listings.length !== 0 ? (
             <Pagination
-              itemsPerPage={listingsPerPage}
+              itemsPerPage={itemsInPage}
               count={listings.length}
               visitPage={visitPage}
               previous={previous_number}
               next={next_number}
-              active={active}
+              active={Number(active)}
               setActive={setActive}
             />
           ) : null}

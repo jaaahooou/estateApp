@@ -17,11 +17,12 @@ class ListingsView(ListAPIView):
 
 class ListingView(RetrieveAPIView):
     queryset = Listing.objects.order_by('-list_date').filter(is_published=True)
+    permission_classes = (permissions.AllowAny, )
     serializer_class = ListingDetailSerializer
     lookup_field = 'slug'
 
 class SearchView(APIView):
-    permission_classes = (permissions.AllowAny,)
+    permission_classes = (permissions.AllowAny, )
     serializer_class = ListingSerializer
 
     def post(self,request, format=None):
@@ -136,6 +137,7 @@ class SearchView(APIView):
             num_days = (datetime.now(timezone.utc)- query.list_date).days
 
             if days_passed != 0:
+                print('DAYS PASSED: ', days_passed)
                 if num_days > days_passed:
                     slug = query.slug
                     queryset = queryset.exclude(slug__iexact=slug)

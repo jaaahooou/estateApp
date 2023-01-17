@@ -3,7 +3,7 @@
   margin: 0 auto;
 
   @include respond(big-desktop) {
-    max-width: none;
+    max-width: $grid-width;
   }
 
   &:not(:last-child) {

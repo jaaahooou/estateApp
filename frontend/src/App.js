@@ -8,6 +8,7 @@ import ListingDetail from "./containers/ListingDetail";
 import Login from "./containers/Login";
 import SignUp from "./containers/SignUp";
 import NotFound from "./components/NotFound";
+
 import Layout from "./hocs/Layout";
 
 import { Provider } from "react-redux";

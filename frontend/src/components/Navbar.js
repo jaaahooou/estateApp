@@ -79,7 +79,7 @@ const navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 };
 
 navbar.propTypes = {
-  logout: PropTypes.func.isRequired,
+  // logout: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
 };
 
